@@ -113,20 +113,20 @@ public class ChooseAreaFragment extends Fragment {
 				} else if (currentLevel == LEVEL_CITY) {
 					selectedCity = cityList.get(position);
 					queryCounties();
-				} /*else if (currentLevel == LEVEL_COUNTY) {
+				} else if (currentLevel == LEVEL_COUNTY) {
 					String weatherId = countyList.get(position).getWeatherId();
-					if (getActivity() instanceof MainActivity) {
+//					if (getActivity() instanceof MainActivity) {
 						Intent intent = new Intent(getActivity(), WeatherActivity.class);
 						intent.putExtra("weather_id", weatherId);
 						startActivity(intent);
 						getActivity().finish();
-					} else if (getActivity() instanceof WeatherActivity) {
-						WeatherActivity activity = (WeatherActivity) getActivity();
-						activity.drawerLayout.closeDrawers();
-						activity.swipeRefresh.setRefreshing(true);
-						activity.requestWeather(weatherId);
-					}
-				}*/
+//					} else if (getActivity() instanceof WeatherActivity) {
+//						WeatherActivity activity = (WeatherActivity) getActivity();
+//						activity.drawerLayout.closeDrawers();
+//						activity.swipeRefresh.setRefreshing(true);
+//						activity.requestWeather(weatherId);
+//					}
+				}
 			}
 		});
 		// 监听返回按钮点击事件
@@ -171,7 +171,7 @@ public class ChooseAreaFragment extends Fragment {
 	 */
 	private void queryCities() {
 		titleText.setText(selectedProvince.getProvinceName());
-		backButton.setVisibility(View.VISIBLE);	// 显示返回按钮
+		backButton.setVisibility(View.VISIBLE);
 		cityList = DataSupport.where("provinceid = ?", String.valueOf(selectedProvince.getId())).find(City.class);
 		if (cityList.size() > 0) {
 			dataList.clear();
