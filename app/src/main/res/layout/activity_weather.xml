@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
-    <!--侧滑菜单-->
+    <!--侧滑布局-->
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -45,14 +45,13 @@
             </ScrollView>
         </android.support.v4.widget.SwipeRefreshLayout>
 
-        <!--切换城市-->
+        <!--侧滑菜单，切换城市-->
         <fragment
             android:id="@+id/choose_area_fragment"
             android:name="com.coolweather.android.ChooseAreaFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
-            />
+            android:layout_gravity="start"/>
 
     </android.support.v4.widget.DrawerLayout>
 
